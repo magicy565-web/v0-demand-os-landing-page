@@ -1,6 +1,6 @@
 import React from "react"
 import type { Metadata } from 'next'
-import { Playfair_Display, Inter } from 'next/font/google'
+import { Playfair_Display, Inter, Noto_Serif_SC } from 'next/font/google'
 import { Analytics } from '@vercel/analytics/next'
 import './globals.css'
 
@@ -13,6 +13,12 @@ const playfair = Playfair_Display({
 const inter = Inter({ 
   subsets: ["latin"],
   variable: '--font-inter'
+});
+
+const notoSerifSC = Noto_Serif_SC({
+  subsets: ["latin"],
+  variable: '--font-noto-serif-sc',
+  weight: ['400', '500', '600', '700']
 });
 
 export const metadata: Metadata = {
@@ -45,7 +51,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="zh-CN">
-      <body className={`${playfair.variable} ${inter.variable} font-sans antialiased`}>
+      <body className={`${playfair.variable} ${inter.variable} ${notoSerifSC.variable} font-sans antialiased`}>
         {children}
         <Analytics />
       </body>
