@@ -5,10 +5,14 @@
 @custom-variant dark (&:is(.dark *));
 
 :root {
-  --navy: #051c2c;
-  --navy-light: #0a2d42;
+  /* Digital Command Center Colors */
+  --navy: #002147;
+  --navy-light: #003366;
+  --electric-blue: #00D9FF;
+  --tiktok-red: #FE2C55;
+  --gold: #A68966;
   --paper: #ffffff;
-  --paper-warm: #f4f4f4;
+  --paper-warm: #F8F9FA;
   --charcoal: #2d2d2d;
   --cobalt: #1a5f7a;
   --cobalt-muted: #2a7a9a;
@@ -91,9 +95,13 @@
 @theme {
   --font-sans: var(--font-inter), 'Inter', system-ui, sans-serif;
   --font-serif: var(--font-playfair), 'Playfair Display', Georgia, serif;
+  --font-serif-sc: var(--font-noto-serif-sc), 'Noto Serif SC', serif;
   
   --color-navy: var(--navy);
   --color-navy-light: var(--navy-light);
+  --color-electric-blue: var(--electric-blue);
+  --color-tiktok-red: var(--tiktok-red);
+  --color-gold: var(--gold);
   --color-paper: var(--paper);
   --color-paper-warm: var(--paper-warm);
   --color-charcoal: var(--charcoal);
@@ -211,4 +219,30 @@
 
 .transition-editorial {
   transition: all 0.5s ease-out;
+}
+
+/* Glassmorphism effect */
+.glass {
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.glass-dark {
+  background: rgba(0, 33, 71, 0.8);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border: 1px solid rgba(0, 217, 255, 0.2);
+}
+
+/* Data visualization */
+.metric-card {
+  border: 1px solid var(--border);
+  transition: all 0.3s ease;
+}
+
+.metric-card:hover {
+  border-color: var(--electric-blue);
+  box-shadow: 0 0 20px rgba(0, 217, 255, 0.15);
 }
